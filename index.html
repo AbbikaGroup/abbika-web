@@ -7,7 +7,7 @@
 
 	<!-- Stylesheets
 	============================================= -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -32,48 +32,50 @@
 
 	<style>
 		:root {
-			--primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			--secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-			--accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-			--dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-			--text-primary: #2d3748;
-			--text-secondary: #718096;
+			--primary: #0d7377;
+			--primary-light: #14a3a8;
+			--primary-dark: #095456;
+			--accent: #e8643a;
+			--accent-light: #f0845f;
+			--primary-gradient: linear-gradient(135deg, #0d7377 0%, #14a3a8 60%, #1bc5cb 100%);
+			--secondary-gradient: linear-gradient(135deg, #e8643a 0%, #f0845f 100%);
+			--accent-gradient: linear-gradient(135deg, #0d7377 0%, #1bc5cb 100%);
+			--dark-gradient: linear-gradient(160deg, #0a1628 0%, #132f4c 100%);
+			--text-primary: #1a202c;
+			--text-secondary: #5a6578;
 			--bg-primary: #ffffff;
-			--bg-secondary: #f7fafc;
-			--shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-			--shadow-modern: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			--bg-secondary: #f4f7fa;
+			--bg-card: #ffffff;
+			--border-color: rgba(0, 0, 0, 0.06);
+			--shadow-xl: 0 25px 50px -12px rgba(13, 115, 119, 0.2);
+			--shadow-modern: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
 		}
 
 		* {
-			font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+			font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 		}
 
-		.font-secondary { 
-			font-family: 'Poppins', serif !important; 
-			font-weight: 600;
-		}
-
-		@-webkit-keyframes fadeInUp {
-		  from {
-			opacity: 0;
-			-webkit-transform: translate3d(0, 70px, 0);
-			transform: translate3d(0, 70px, 0);
-		  }
+		.font-secondary {
+			font-family: 'Sora', sans-serif !important;
+			font-weight: 700;
 		}
 
 		@keyframes fadeInUp {
 		  from {
 			opacity: 0;
-			-webkit-transform: translate3d(0, 70px, 0);
-			transform: translate3d(0, 70px, 0);
+			transform: translate3d(0, 40px, 0);
+		  }
+		  to {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
 		  }
 		}
 
 		/* Modern Header */
 		#header {
-			backdrop-filter: blur(10px);
-			background: rgba(255, 255, 255, 0.85);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+			backdrop-filter: blur(12px);
+			background: rgba(255, 255, 255, 0.88);
+			border-bottom: 1px solid var(--border-color);
 		}
 
 		/* Logo Enhancement */
@@ -90,38 +92,35 @@
 		}
 
 		#logo a:hover {
-			background: rgba(102, 126, 234, 0.05);
+			background: rgba(13, 115, 119, 0.05);
 			transform: translateY(-1px);
 		}
 
 		#logo img {
 			max-height: 48px;
-			filter: drop-shadow(0 1px 3px rgba(102, 126, 234, 0.15));
+			filter: drop-shadow(0 1px 3px rgba(13, 115, 119, 0.12));
 			transition: all 0.3s ease;
 		}
 
 		#logo a:hover img {
-			filter: drop-shadow(0 2px 6px rgba(102, 126, 234, 0.2));
+			filter: drop-shadow(0 2px 6px rgba(13, 115, 119, 0.18));
 		}
 
 		/* Modern Navigation */
 		.primary-menu ul li a {
 			font-weight: 500;
 			font-size: 15px;
-			letter-spacing: 0.5px;
+			letter-spacing: 0.3px;
 			transition: all 0.3s ease;
 		}
 
 		.primary-menu ul li a:hover {
-			background: var(--primary-gradient);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
+			color: var(--primary) !important;
 		}
 
-		/* Hero Section Modern Styling */
+		/* Hero Section */
 		.hero-section {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			background: var(--dark-gradient);
 			position: relative;
 			overflow: hidden;
 		}
@@ -129,12 +128,23 @@
 		.hero-section::before {
 			content: '';
 			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="0" cy="0" r="1"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><g fill="url(%23a)"><circle cx="200" cy="200" r="100"/><circle cx="800" cy="300" r="150"/><circle cx="300" cy="700" r="120"/><circle cx="700" cy="800" r="80"/></g></svg>');
-			opacity: 0.3;
+			top: -50%;
+			right: -20%;
+			width: 80%;
+			height: 200%;
+			background: radial-gradient(ellipse at center, rgba(13, 115, 119, 0.15) 0%, transparent 70%);
+			pointer-events: none;
+		}
+
+		.hero-section::after {
+			content: '';
+			position: absolute;
+			bottom: -30%;
+			left: -10%;
+			width: 60%;
+			height: 120%;
+			background: radial-gradient(ellipse at center, rgba(232, 100, 58, 0.08) 0%, transparent 70%);
+			pointer-events: none;
 		}
 
 		.hero-content {
@@ -143,67 +153,85 @@
 		}
 
 		.hero-badge {
-			background: rgba(255, 255, 255, 0.2);
+			background: rgba(13, 115, 119, 0.25);
 			backdrop-filter: blur(10px);
-			border: 1px solid rgba(255, 255, 255, 0.3);
+			border: 1px solid rgba(20, 163, 168, 0.3);
 			border-radius: 50px;
 			padding: 8px 24px;
-			color: rgba(255, 255, 255, 0.9);
+			color: #5de8ec;
 			font-weight: 600;
 			font-size: 13px;
-			letter-spacing: 1px;
+			letter-spacing: 1.5px;
 			display: inline-block;
 			margin-bottom: 24px;
+			text-transform: uppercase;
 		}
 
 		.hero-title {
-			color: white;
+			color: #f0f4f8;
 			font-weight: 800;
-			line-height: 1.1;
+			line-height: 1.08;
 			margin-bottom: 24px;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			letter-spacing: -0.02em;
+		}
+
+		.hero-title strong {
+			background: var(--primary-gradient);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
 		}
 
 		.hero-subtitle {
-			color: rgba(255, 255, 255, 0.9);
-			font-size: 20px;
-			line-height: 1.6;
+			color: rgba(224, 232, 240, 0.85);
+			font-size: 19px;
+			line-height: 1.7;
 			margin-bottom: 40px;
 			font-weight: 400;
 		}
 
 		/* Modern Button */
 		.btn-modern {
-			background: rgba(255, 255, 255, 0.15);
-			backdrop-filter: blur(10px);
-			border: 2px solid rgba(255, 255, 255, 0.3);
+			background: var(--primary-gradient);
+			border: none;
 			color: white;
-			padding: 16px 32px;
-			border-radius: 50px;
+			padding: 16px 36px;
+			border-radius: 12px;
 			font-weight: 600;
 			font-size: 16px;
-			letter-spacing: 0.5px;
+			letter-spacing: 0.3px;
 			transition: all 0.3s ease;
 			text-decoration: none;
 			display: inline-flex;
 			align-items: center;
-			gap: 8px;
+			gap: 10px;
+			box-shadow: 0 4px 16px rgba(13, 115, 119, 0.35);
 		}
 
 		.btn-modern:hover {
-			background: white;
-			color: #667eea;
 			transform: translateY(-2px);
+			box-shadow: 0 8px 28px rgba(13, 115, 119, 0.45);
+			color: white;
+		}
+
+		/* Mission Bridge */
+		.mission-bridge {
+			background: var(--bg-card);
+			backdrop-filter: blur(10px);
+			border-radius: 20px;
+			padding: 40px;
+			text-align: center;
 			box-shadow: var(--shadow-modern);
+			border: 1px solid var(--border-color);
 		}
 
 		/* Modern Cards */
 		.modern-card {
-			background: white;
-			border-radius: 24px;
+			background: var(--bg-card);
+			border-radius: 20px;
 			box-shadow: var(--shadow-modern);
-			border: 1px solid rgba(0, 0, 0, 0.05);
-			transition: all 0.3s ease;
+			border: 1px solid var(--border-color);
+			transition: all 0.35s ease;
 			overflow: hidden;
 			height: 100%;
 			display: flex;
@@ -211,32 +239,31 @@
 		}
 
 		.modern-card:hover {
-			transform: translateY(-8px);
+			transform: translateY(-6px);
 			box-shadow: var(--shadow-xl);
+			border-color: rgba(13, 115, 119, 0.15);
 		}
 
 		.card-content {
-			padding: 48px;
+			padding: 44px;
 			flex: 1;
 			display: flex;
 			flex-direction: column;
 		}
 
 		.card-badge {
-			background: var(--primary-gradient);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-			font-weight: 600;
-			font-size: 13px;
-			letter-spacing: 1px;
+			color: var(--primary);
+			font-weight: 700;
+			font-size: 12px;
+			letter-spacing: 1.5px;
 			text-transform: uppercase;
 			margin-bottom: 16px;
 		}
 
 		.card-title {
 			color: var(--text-primary);
-			font-size: 28px;
+			font-family: 'Sora', sans-serif;
+			font-size: 26px;
 			font-weight: 700;
 			margin-bottom: 20px;
 			line-height: 1.3;
@@ -244,46 +271,48 @@
 
 		.card-text {
 			color: var(--text-secondary);
-			line-height: 1.7;
-			font-size: 16px;
+			line-height: 1.75;
+			font-size: 15.5px;
 			flex: 1;
 		}
 
 		/* Product Cards */
 		.product-card {
-			background: white;
+			background: var(--bg-card);
 			border-radius: 20px;
 			padding: 40px;
 			box-shadow: var(--shadow-modern);
-			border: 1px solid rgba(0, 0, 0, 0.05);
-			transition: all 0.3s ease;
+			border: 1px solid var(--border-color);
+			transition: all 0.35s ease;
 			height: 100%;
 		}
 
 		.product-card:hover {
 			transform: translateY(-5px);
 			box-shadow: var(--shadow-xl);
+			border-color: rgba(13, 115, 119, 0.15);
 		}
 
 		.product-icon {
-			width: 80px;
-			height: 80px;
-			border-radius: 20px;
+			width: 72px;
+			height: 72px;
+			border-radius: 16px;
 			background: var(--primary-gradient);
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			margin-bottom: 24px;
-			box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+			box-shadow: 0 6px 24px rgba(13, 115, 119, 0.25);
 		}
 
 		.product-icon i {
-			font-size: 32px;
+			font-size: 30px;
 			color: white;
 		}
 
 		.product-title {
-			font-size: 24px;
+			font-family: 'Sora', sans-serif;
+			font-size: 22px;
 			font-weight: 700;
 			color: var(--text-primary);
 			margin-bottom: 16px;
@@ -291,111 +320,118 @@
 
 		.product-description {
 			color: var(--text-secondary);
-			line-height: 1.7;
+			line-height: 1.75;
 			margin-bottom: 20px;
 		}
 
 		.product-status {
-			background: rgba(102, 126, 234, 0.1);
-			color: #667eea;
+			background: rgba(13, 115, 119, 0.08);
+			color: var(--primary);
 			padding: 8px 16px;
-			border-radius: 20px;
-			font-size: 14px;
+			border-radius: 10px;
+			font-size: 13px;
 			font-weight: 600;
 			display: inline-block;
 		}
 
 		/* Vision Section */
 		.vision-card {
-			background: white;
+			background: var(--bg-card);
 			border-radius: 16px;
-			padding: 32px;
+			padding: 28px;
 			box-shadow: var(--shadow-modern);
-			border: 1px solid rgba(0, 0, 0, 0.05);
-			margin-bottom: 24px;
+			border: 1px solid var(--border-color);
+			margin-bottom: 20px;
 			transition: all 0.3s ease;
 		}
 
 		.vision-card:hover {
 			transform: translateY(-3px);
-			box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+			box-shadow: var(--shadow-xl);
+			border-color: rgba(13, 115, 119, 0.15);
 		}
 
 		.vision-icon {
-			color: #667eea;
-			font-size: 24px;
-			margin-right: 12px;
+			color: var(--primary);
+			font-size: 22px;
+			margin-right: 10px;
 		}
 
 		.vision-title {
 			color: var(--text-primary);
-			font-size: 18px;
+			font-family: 'Sora', sans-serif;
+			font-size: 17px;
 			font-weight: 600;
-			margin-bottom: 12px;
+			margin-bottom: 10px;
 			display: flex;
 			align-items: center;
 		}
 
 		.vision-text {
 			color: var(--text-secondary);
-			line-height: 1.6;
+			line-height: 1.65;
+			font-size: 15px;
 		}
 
 		/* Consulting Callout */
 		.consulting-callout {
-			background: linear-gradient(135deg, #f6f9fc 0%, #ffffff 100%);
-			border: 2px solid rgba(102, 126, 234, 0.1);
-			border-radius: 20px;
-			padding: 32px;
-			margin-top: 40px;
+			background: var(--bg-secondary);
+			border: 1px solid var(--border-color);
+			border-left: 4px solid var(--primary);
+			border-radius: 12px;
+			padding: 28px 32px;
+			margin-top: 32px;
 		}
 
 		.consulting-callout h5 {
 			color: var(--text-primary);
+			font-family: 'Sora', sans-serif;
 			font-weight: 600;
-			margin-bottom: 16px;
+			margin-bottom: 12px;
 		}
 
 		.consulting-callout p {
 			color: var(--text-secondary);
 			margin-bottom: 0;
-			line-height: 1.6;
+			line-height: 1.65;
 		}
 
 		/* Section Headers */
 		.section-header {
 			text-align: center;
-			margin-bottom: 80px;
+			margin-bottom: 64px;
 		}
 
 		.section-title {
-			font-size: 48px;
+			font-family: 'Sora', sans-serif;
+			font-size: 42px;
 			font-weight: 800;
 			color: var(--text-primary);
-			margin-bottom: 16px;
-			line-height: 1.2;
+			margin-bottom: 14px;
+			line-height: 1.15;
+			letter-spacing: -0.02em;
 		}
 
 		.section-subtitle {
-			font-size: 20px;
+			font-size: 18px;
 			color: var(--text-secondary);
 			font-weight: 400;
 		}
 
 		/* About Section */
 		.about-section {
-			padding: 120px 0;
+			padding: 100px 0;
 		}
 
 		.about-text {
-			font-size: 18px;
+			font-size: 17px;
 			line-height: 1.8;
 			color: var(--text-secondary);
 			margin-bottom: 24px;
 		}
 
 		.about-link {
-			color: #667eea;
+			color: var(--primary);
 			font-weight: 600;
 			text-decoration: none;
 			display: inline-flex;
@@ -405,13 +441,14 @@
 		}
 
 		.about-link:hover {
+			color: var(--primary-dark);
 			transform: translateX(4px);
 		}
 
 		/* Products Section */
 		.products-section {
-			background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-			padding: 120px 0;
+			background: var(--bg-secondary);
+			padding: 100px 0;
 		}
 
 		/* Footer Modern */
@@ -421,13 +458,14 @@
 		}
 
 		.footer-title {
+			font-family: 'Sora', sans-serif;
 			color: white;
 			font-weight: 600;
-			margin-bottom: 24px;
+			margin-bottom: 20px;
 		}
 
 		.footer-link {
-			color: rgba(255, 255, 255, 0.7);
+			color: rgba(255, 255, 255, 0.65);
 			text-decoration: none;
 			transition: all 0.3s ease;
 			margin-bottom: 8px;
@@ -435,26 +473,231 @@
 		}
 
 		.footer-link:hover {
-			color: white;
+			color: #5de8ec;
 			transform: translateX(4px);
 		}
 
 		.footer-email {
-			color: #4facfe;
+			color: #5de8ec;
 			text-decoration: none;
 			font-weight: 500;
 		}
 
-		/* Responsive */
-		@media (max-width: 768px) {
-			.hero-title {
-				font-size: 42px;
+		.footer-email:hover {
+			color: #fff;
+		}
+
+		/* =============================================
+		   RESPONSIVE - Mobile First Fixes
+		   ============================================= */
+		@media (max-width: 991px) {
+			.hero-section {
+				padding-top: 80px !important;
+				padding-bottom: 100px !important;
 			}
+			.hero-title {
+				font-size: 36px !important;
+			}
+			.hero-subtitle {
+				font-size: 16px;
+			}
+			.hero-content .row {
+				flex-direction: column;
+			}
+			.hero-content .col-lg-8 {
+				margin-top: 0 !important;
+				margin-bottom: 0 !important;
+				padding-top: 16px;
+			}
+		}
+
+		@media (max-width: 768px) {
 			.section-title {
-				font-size: 36px;
+				font-size: 30px;
+			}
+			.section-header {
+				margin-bottom: 40px;
 			}
 			.card-content {
-				padding: 32px;
+				padding: 28px;
+			}
+			.product-card {
+				padding: 28px;
+			}
+			.about-section {
+				padding: 60px 0;
+			}
+			.products-section {
+				padding: 60px 0;
+			}
+			#section-vision {
+				padding: 60px 0 !important;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.hero-title {
+				font-size: 28px !important;
+			}
+			.btn-modern {
+				padding: 14px 24px;
+				font-size: 15px;
+			}
+		}
+
+		/* =============================================
+		   DARK MODE - prefers-color-scheme
+		   ============================================= */
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--text-primary: #e8ecf0;
+				--text-secondary: #9aa5b4;
+				--bg-primary: #0f1923;
+				--bg-secondary: #15202d;
+				--bg-card: #1a2836;
+				--border-color: rgba(255, 255, 255, 0.08);
+				--shadow-modern: 0 10px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+				--shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+			}
+
+			body, #wrapper, #content {
+				background-color: var(--bg-primary) !important;
+				color: var(--text-primary);
+			}
+
+			#header {
+				background: rgba(15, 25, 35, 0.9) !important;
+				border-bottom-color: var(--border-color) !important;
+			}
+
+			.header-wrap-clone {
+				background: var(--bg-primary) !important;
+			}
+
+			/* Navigation */
+			.primary-menu ul li a {
+				color: var(--text-secondary) !important;
+			}
+			.primary-menu ul li a:hover {
+				color: var(--primary-light) !important;
+			}
+
+			/* Hero */
+			.hero-section {
+				background: linear-gradient(160deg, #060d16 0%, #0d1f30 50%, #0a2520 100%);
+			}
+
+			/* Mission bridge */
+			.mission-bridge,
+			.mission-bridge p {
+				background: var(--bg-card) !important;
+				color: var(--text-primary) !important;
+			}
+			.mission-bridge strong {
+				-webkit-text-fill-color: unset;
+				color: var(--primary-light) !important;
+			}
+
+			/* Cards */
+			.modern-card {
+				background: var(--bg-card);
+				border-color: var(--border-color);
+			}
+			.card-title {
+				color: var(--text-primary);
+			}
+			.card-text {
+				color: var(--text-secondary);
+			}
+
+			/* Product cards */
+			.product-card {
+				background: var(--bg-card);
+				border-color: var(--border-color);
+			}
+			.product-title {
+				color: var(--text-primary);
+			}
+			.product-description {
+				color: var(--text-secondary);
+			}
+			.product-status {
+				background: rgba(13, 115, 119, 0.15);
+			}
+
+			/* Vision cards */
+			.vision-card {
+				background: var(--bg-card);
+				border-color: var(--border-color);
+			}
+			.vision-title {
+				color: var(--text-primary);
+			}
+
+			/* Consulting callout */
+			.consulting-callout {
+				background: var(--bg-card);
+				border-color: var(--border-color);
+				border-left-color: var(--primary);
+			}
+			.consulting-callout h5 {
+				color: var(--text-primary);
+			}
+			.consulting-callout p {
+				color: var(--text-secondary);
+			}
+
+			/* Products section bg */
+			.products-section {
+				background: var(--bg-secondary) !important;
+			}
+
+			/* About section */
+			.about-text {
+				color: var(--text-secondary);
+			}
+
+			/* Pipeline text */
+			#section-products h4 {
+				color: var(--text-primary) !important;
+			}
+
+			/* Vision section */
+			#section-vision {
+				background: var(--bg-primary);
+			}
+
+			/* Footer */
+			.modern-footer {
+				background: linear-gradient(160deg, #060d16 0%, #0d1520 100%);
+			}
+
+			/* Logo for dark mode */
+			#logo img {
+				filter: brightness(1.1) drop-shadow(0 1px 3px rgba(13, 115, 119, 0.2));
+			}
+
+			/* Mobile menu */
+			#primary-menu-trigger svg path {
+				stroke: var(--text-primary);
+			}
+
+			/* About section background */
+			.about-section {
+				background: var(--bg-primary);
+			}
+
+			/* Selection color */
+			::selection {
+				background: var(--primary);
+				color: #fff;
+			}
+
+			/* ScrollTop */
+			#gotoTop {
+				background: var(--bg-card) !important;
+				color: var(--text-primary) !important;
+				border-color: var(--border-color) !important;
 			}
 		}
 	</style>
@@ -515,13 +758,14 @@
 
 		<!-- Hero Section
 		============================================= -->
-		<section id="slider" class="hero-section include-header" style="padding: 120px 0 200px">
+		<section id="slider" class="hero-section include-header" style="padding: 120px 0 160px">
 
 			<div class="container hero-content">
 				<div class="row mt-0 mt-md-5 clearfix">
-					<div class="col-lg-8 my-5 my-md-0">
-						<h1 class="hero-title font-secondary" data-animate="fadeInUp" data-delay="200" style="font-size: 64px;">
-							Building the Future of AI Mobile Apps & Web3
+					<div class="col-lg-8 mt-2 mt-md-0 mb-0">
+						<div class="hero-badge" data-animate="fadeInUp" data-delay="100">AI & WEB3 INNOVATION</div>
+						<h1 class="hero-title font-secondary" data-animate="fadeInUp" data-delay="200" style="font-size: 60px;">
+							Building the Future of <strong>AI Mobile Apps</strong> & <strong>Web3</strong>
 						</h1>
 						<p class="hero-subtitle" data-animate="fadeInUp" data-delay="400">
 							Developing revolutionary AI-powered educational apps for children and next-generation Solidity audit tools. From idea to IPO, we're building tomorrow's essential technologies today.
@@ -546,9 +790,9 @@
 				<div class="container" style="margin-top: -80px; position: relative; z-index: 5; margin-bottom: 40px;">
 					<div class="row justify-content-center">
 						<div class="col-lg-10">
-							<div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1); border: 1px solid rgba(255, 255, 255, 0.8);">
-								<p style="font-size: 20px; line-height: 1.7; color: var(--text-primary); margin: 0; font-weight: 400;">
-									At Abbika, our mission is to build technology that <strong style="background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">empowers and protects</strong>. That's why we focus on two powerful frontiers: AI-powered apps that enrich the minds of children and next-generation Web3 tools that safeguard the future of digital assets. While these sectors may seem worlds apart, they are united by a single belief: that thoughtful innovation can shape a safer, smarter, and more meaningful digital future for all.
+							<div class="mission-bridge">
+								<p style="font-size: 19px; line-height: 1.75; color: var(--text-primary); margin: 0; font-weight: 400;">
+									At Abbika, our mission is to build technology that <strong style="color: var(--primary);">empowers and protects</strong>. That's why we focus on two powerful frontiers: AI-powered apps that enrich the minds of children and next-generation Web3 tools that safeguard the future of digital assets. While these sectors may seem worlds apart, they are united by a single belief: that thoughtful innovation can shape a safer, smarter, and more meaningful digital future for all.
 								</p>
 							</div>
 						</div>
@@ -639,8 +883,8 @@
 							</div>
 						</div>
 
-						<div class="text-center" style="margin-top: 80px;">
-							<h4 style="color: var(--text-primary); font-size: 28px; font-weight: 700; margin-bottom: 20px;">Additional Innovations in Pipeline</h4>
+						<div class="text-center" style="margin-top: 64px;">
+							<h4 style="color: var(--text-primary); font-size: 24px; font-weight: 700; margin-bottom: 16px; font-family: 'Sora', sans-serif;">Additional Innovations in Pipeline</h4>
 							<p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">Beyond our current MVPs, we have 3-4 additional breakthrough concepts in AI mobile applications that will be unveiled as we secure VC funding and expand our development team. Each product is designed to capture significant market share in high-growth technology sectors.</p>
 						</div>
 					</div>
@@ -754,7 +998,7 @@
 			<div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 30px 0;">
 				<div class="container text-center">
 					<span style="color: rgba(255, 255, 255, 0.7);">
-						© 2024 Abbika LLC | AI-Powered Innovation | Pre-Funded Startup
+						© 2025 Abbika LLC | AI-Powered Innovation | Pre-Funded Startup
 					</span>
 				</div>
 			</div>
