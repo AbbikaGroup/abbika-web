@@ -1,4 +1,6 @@
 ---
+import PostHog from '../components/posthog.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -136,6 +138,8 @@ const jsonLdWebPage = {
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdOrganization)} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebSite)} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebPage)} />
+
+    <PostHog />
 
     <!-- Global Styles -->
     <style is:global>
