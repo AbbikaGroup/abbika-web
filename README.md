@@ -1,6 +1,6 @@
 # Abbika Website
 
-Corporate website for [Abbika LLC](https://abbika.com) — an AI-powered mobile apps and Web3 innovation startup.
+Corporate website for [Abbika LLC](https://abbika.com) — an AI-powered apps and Web3 innovation startup.
 
 ## Tech Stack
 

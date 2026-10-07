@@ -26,7 +26,7 @@ const jsonLdOrganization = {
   name: 'Abbika LLC',
   url: siteUrl,
   logo: `${siteUrl}/one-page/images/logo.png`,
-  description: 'Abbika builds VerbPal (AI language learning for children), TaskJogger (intelligent task management), and Web3 security tools.',
+  description: 'Abbika builds VerbPal (AI language learning for children), TaskJogger (intelligent task management), Cribble (AI invoice and receipt data extraction), and Web3 security tools.',
   email: 'info@abbika.com',
   contactPoint: [
     {
@@ -43,6 +43,7 @@ const jsonLdOrganization = {
   sameAs: [
     'https://www.verbpal.com',
     'https://www.taskjogger.com',
+    'https://cribble.co',
   ],
   owns: [
     {
@@ -58,6 +59,13 @@ const jsonLdOrganization = {
       url: 'https://www.taskjogger.com',
       description: 'Intelligent AI-powered task management platform for teams and individuals.',
       brand: { '@type': 'Brand', name: 'TaskJogger' },
+    },
+    {
+      '@type': 'Product',
+      name: 'Cribble',
+      url: 'https://cribble.co',
+      description: 'AI invoice and receipt data extraction with confidence-scored fields and automatic document matching.',
+      brand: { '@type': 'Brand', name: 'Cribble' },
     },
   ],
 };
@@ -549,8 +557,8 @@ const jsonLdWebPage = {
 
       .products-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
       }
 
       .product-card {
@@ -573,17 +581,16 @@ const jsonLdWebPage = {
         width: 72px;
         height: 72px;
         border-radius: 16px;
-        background: var(--primary-gradient);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        overflow: hidden;
         margin-bottom: 24px;
-        box-shadow: 0 6px 24px rgba(13, 115, 119, 0.25);
+        box-shadow: var(--shadow-modern);
       }
 
-      .product-icon i {
-        font-size: 30px;
-        color: white;
+      .product-icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .product-title {
@@ -847,7 +854,8 @@ const jsonLdWebPage = {
         .hero-subtitle {
           font-size: 16px;
         }
-        .vision-layout {
+        .vision-layout,
+        .products-grid {
           grid-template-columns: 1fr;
         }
         .site-nav {
@@ -893,7 +901,6 @@ const jsonLdWebPage = {
           padding: 60px 0;
         }
         .cards-grid,
-        .products-grid,
         .vision-grid {
           grid-template-columns: 1fr;
         }
